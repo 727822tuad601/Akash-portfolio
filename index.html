@@ -6,6 +6,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Portfolio Website</title>
+    
+    <!-- Three.js Import Map for robust modular loading -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
 </head>
 <body>
     <header>
@@ -45,55 +55,38 @@
         <h2 class="heading">My <span>Skills</span></h2>
         
         <div class="skills-container">
-            <!-- Autodesk Maya -->
             <div class="skill-box">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/autodeskmaya.svg" alt="Maya Logo" class="skill-icon">
                 <h3>Maya</h3>
             </div>
-
-            <!-- Blender -->
             <div class="skill-box">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/blender.svg" alt="Blender Logo" class="skill-icon">
                 <h3>Blender</h3>
             </div>
-
-            <!-- Unreal Engine 5 -->
             <div class="skill-box">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/unrealengine.svg" alt="Unreal Engine 5 Logo" class="skill-icon">
                 <h3>Unreal Engine 5</h3>
             </div>
-
-            <!-- Premiere Pro -->
             <div class="skill-box">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobepremierepro.svg" alt="Premiere Pro Logo" class="skill-icon">
                 <h3>Premiere Pro</h3>
             </div>
-
-            <!-- Photoshop -->
             <div class="skill-box">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobephotoshop.svg" alt="Photoshop Logo" class="skill-icon">
                 <h3>Photoshop</h3>
             </div>
-
-            <!-- Unity -->
             <div class="skill-box">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/unity.svg" alt="Unity Logo" class="skill-icon">
                 <h3>Unity</h3>
             </div>
-
-            <!-- ZBrush -->
             <div class="skill-box">
                 <img src="https://logosandtypes.com/wp-content/uploads/2020/08/zbrush.svg" alt="ZBrush Logo" class="skill-icon">
                 <h3>ZBrush</h3>
             </div>
-
-            <!-- Visual Studio Code -->
             <div class="skill-box">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/visualstudiocode.svg" alt="VS Code Logo" class="skill-icon">
                 <h3>VS Code</h3>
             </div>
-
-            <!-- Illustrator -->
             <div class="skill-box">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobeillustrator.svg" alt="Illustrator Logo" class="skill-icon">
                 <h3>Illustrator</h3>
@@ -104,6 +97,74 @@
     <!-- PROJECTS SECTION -->
     <section class="projects" id="projects">
         <h2 class="heading">My <span>Projects</span></h2>
+
+        <!-- 3D MODELS SUBSECTION (2x2 Three.js Setup) -->
+        <div class="project-subsection">
+            <h3 class="sub-heading"><i class="fa-solid fa-cube"></i> Interactive 3D Models</h3>
+            <p class="section-desc">Click and drag inside each viewer to rotate and view the models in 360°.</p>
+            
+            <div class="models-grid">
+                <!-- Model 1 -->
+                <div class="model-card">
+                    <div class="three-container" data-model="models/Hammer.fbx"></div>
+                    <div class="model-info">
+                        <h4>Hammer</h4>
+                        <p>Stylized Asset Model</p>
+                    </div>
+                </div>
+
+                <!-- Model 2 -->
+                <div class="model-card">
+                    <div class="three-container" data-model="models/Lego Statue.fbx"></div>
+                    <div class="model-info">
+                        <h4>Lego Statue</h4>
+                        <p>Hard Surface Construct Model</p>
+                    </div>
+                </div>
+
+                <!-- Model 3 -->
+                <div class="model-card">
+                    <div class="three-container" data-model="models/Robotic Spidy.fbx"></div>
+                    <div class="model-info">
+                        <h4>Robotic Spidy</h4>
+                        <p>Sci-Fi Cybernetic Model</p>
+                    </div>
+                </div>
+
+                <!-- Model 4 -->
+                <div class="model-card">
+                    <div class="three-container" data-model="models/Spotlight.fbx"></div>
+                    <div class="model-info">
+                        <h4>Spotlight</h4>
+                        <p>Detailed Prop Model</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANIMATION SUBSECTION -->
+        <div class="project-subsection">
+            <h3 class="sub-heading"><i class="fa-solid fa-film"></i> Drawn Animations</h3>
+            
+            <div class="animation-container">
+                <div class="animation-video-wrapper">
+                    <!-- Updated video source path to point inside the models folder -->
+                    <video id="portfolio-video" controls loop playsinline>
+                        <source src="models/stickman.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="animation-details">
+                    <h4>Frame-by-Frame Character Loop</h4>
+                    <p class="specs">150+ Frames | 18 Frames Per Second</p>
+                    <p class="desc">A meticulously hand-drawn frame-by-frame production hand-crafted in <strong>Adobe Photoshop</strong>. Every single frame was individually drawn to maintain organic weight and animation timing, and subsequently compiled, timed, and masterfully audio-synchronized using <strong>Adobe Premiere Pro</strong>.</p>
+                    
+                    <div class="video-controls-hint">
+                        <span><i class="fa-solid fa-volume-high"></i> Supports sound. Use the player bar to mute, unmute, or adjust volume.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- RESUME SECTION -->
@@ -111,21 +172,17 @@
         <h2 class="heading">My <span>Resume</span></h2>
 
         <div class="resume-container">
-            <!-- Left Side: Drive Link Info -->
             <div class="resume-info">
                 <i class="fa-solid fa-file-pdf resume-main-icon"></i>
                 <h3>Access My Full Resume</h3>
                 <p>Scan the QR code to open my resume instantly on your mobile device, or click the button below to view and download it directly from Google Drive.</p>
-                <!-- REPLACE 'YOUR_GOOGLE_DRIVE_LINK_HERE' with your actual shared link -->
                 <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" rel="noopener noreferrer" class="btn">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Drive Link
                 </a>
             </div>
 
-            <!-- Right Side: Interactive QR Code Card -->
             <div class="resume-qr-box">
                 <div class="qr-wrapper">
-                    <!-- REPLACE 'qr-code-placeholder.png' with your generated QR code image path -->
                     <img src="qr-code-placeholder.png" alt="Resume QR Code" class="qr-image">
                 </div>
                 <p class="qr-instruction"><i class="fa-solid fa-camera"></i> Scan to View on Mobile</p>
@@ -138,7 +195,6 @@
         <h2 class="heading">Contact <span>Me</span></h2>
         
         <div class="contact-container">
-            <!-- Phone / WhatsApp -->
             <div class="contact-box">
                 <i class="fa-brands fa-whatsapp"></i>
                 <h3>WhatsApp / Phone</h3>
@@ -146,7 +202,6 @@
                 <a href="https://wa.me/916383784074" target="_blank" rel="noopener noreferrer" class="contact-btn">Message Me</a>
             </div>
 
-            <!-- Email ID -->
             <div class="contact-box">
                 <i class="fa-solid fa-envelope"></i>
                 <h3>Email</h3>
@@ -154,7 +209,6 @@
                 <a href="mailto:akashgopalakrishnan2409@gmail.com" class="contact-btn">Email Me</a>
             </div>
 
-            <!-- LinkedIn -->
             <div class="contact-box">
                 <i class="fa-brands fa-linkedin-in"></i>
                 <h3>LinkedIn</h3>
@@ -162,7 +216,6 @@
                 <a href="https://www.linkedin.com/in/akash-g-4a7846422/" target="_blank" rel="noopener noreferrer" class="contact-btn">Connect</a>
             </div>
 
-            <!-- Instagram -->
             <div class="contact-box">
                 <i class="fa-brands fa-instagram"></i>
                 <h3>Instagram</h3>
@@ -170,7 +223,6 @@
                 <a href="https://www.instagram.com/akash.g.offl" target="_blank" rel="noopener noreferrer" class="contact-btn">Follow</a>
             </div>
 
-            <!-- X / Twitter -->
             <div class="contact-box">
                 <i class="fa-brands fa-x-twitter"></i>
                 <h3>X / Twitter</h3>
@@ -180,7 +232,7 @@
         </div>
     </section>
 
-    <!-- TYPED.JS ENGINE SCRIPTS -->
+    <!-- TYPED.JS SCRIPTS -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('.typed-words', {
@@ -189,6 +241,93 @@
             backSpeed: 40,
             backDelay: 1500,
             loop: true
+        });
+    </script>
+
+    <!-- THREE.JS RUNTIME SCRIPT -->
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+
+        const containers = document.querySelectorAll('.three-container');
+
+        containers.forEach(container => {
+            const modelPath = container.getAttribute('data-model');
+
+            // Scene and Camera Setup
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.set(0, 15, 35);
+
+            // Transparent background setup to preserve CSS layout radial styling
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.shadowMap.enabled = true;
+            container.appendChild(renderer.domElement);
+
+            // Studio Lighting Setup
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.85); 
+            scene.add(ambientLight);
+            
+            const dirLight1 = new THREE.DirectionalLight(0xffffff, 1.0);
+            dirLight1.position.set(20, 40, 20);
+            scene.add(dirLight1);
+
+            const dirLight2 = new THREE.DirectionalLight(0xb74b4b, 0.45); // Subtle red rim light
+            dirLight2.position.set(-20, -10, -20);
+            scene.add(dirLight2);
+
+            // Smooth Orbit Interaction
+            const controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 1.2;
+
+            // Loader
+            const fbxLoader = new FBXLoader();
+            fbxLoader.load(
+                modelPath,
+                (object) => {
+                    // Normalize model size and center its local pivot boundary
+                    const box = new THREE.Box3().setFromObject(object);
+                    const size = box.getSize(new THREE.Vector3());
+                    const center = box.getCenter(new THREE.Vector3());
+                    
+                    const maxDim = Math.max(size.x, size.y, size.z);
+                    const scaleFactor = 16 / maxDim; // Uniform target sizing bounding scale
+                    object.scale.set(scaleFactor, scaleFactor, scaleFactor);
+                    
+                    // Center the model relative to our camera frame focus
+                    object.position.x = -center.x * scaleFactor;
+                    object.position.y = -center.y * scaleFactor;
+                    object.position.z = -center.z * scaleFactor;
+
+                    scene.add(object);
+                },
+                undefined,
+                (error) => {
+                    console.error('FBX Loader failed parsing asset target:', error);
+                }
+            );
+
+            // Rendering Loop
+            function animate() {
+                requestAnimationFrame(animate);
+                controls.update();
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Resize Observer
+            window.addEventListener('resize', () => {
+                if (!container.clientWidth) return;
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
         });
     </script>
 </body>
