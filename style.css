@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
 *{
     margin: 0;
@@ -114,7 +114,7 @@ section{
 .heading {
     font-size: 5rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 
 .home .home-content h1{
@@ -289,7 +289,6 @@ span{
     width: 5.5rem;
     height: 5.5rem;
     margin-bottom: 1.5rem;
-    /* Shifts original brand SVGs smoothly to your theme color: #b74b4b */
     filter: invert(36%) sepia(87%) saturate(1215%) hue-rotate(325deg) brightness(85%) contrast(85%);
     transition: 0.3s ease;
 }
@@ -311,7 +310,6 @@ span{
     color: #b74b4b;
 }
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .skills-container {
         gap: 2rem;
@@ -340,6 +338,220 @@ span{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 10rem;
+}
+
+.project-subsection {
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 8rem;
+}
+
+.project-subsection:last-child {
+    margin-bottom: 0;
+}
+
+.sub-heading {
+    font-size: 3rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.sub-heading i {
+    color: #b74b4b;
+}
+
+.section-desc {
+    font-size: 1.4rem;
+    color: #aaaaaa;
+    margin-bottom: 3.5rem;
+}
+
+/* 3D Model 2x2 Grid Layout CSS */
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 4rem; /* Increased spacing to give the models breathing room */
+    width: 100%;
+}
+
+.model-card {
+    background: #111111;
+    border: 1px solid #222222;
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.model-card:hover {
+    border-color: #b74b4b;
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(183, 75, 75, 0.15);
+}
+
+/* Redesigned 3D Canvas wrapper height and background lighting */
+.three-container {
+    width: 100%;
+    height: 38rem; 
+    background: radial-gradient(circle, #222222 0%, #0a0a0a 100%);
+    position: relative;
+    border-bottom: 1px solid #222222;
+    overflow: hidden;
+}
+
+/* Forces WebGL inside the three container to adapt correctly */
+.three-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    outline: none;
+}
+
+.model-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.model-info h4 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+    transition: 0.3s ease;
+}
+
+.model-card:hover .model-info h4 {
+    color: #b74b4b;
+}
+
+.model-info p {
+    font-size: 1.3rem;
+    color: #aaaaaa;
+}
+
+/* Frame-By-Frame Animation Layout Showcase */
+.animation-container {
+    display: flex;
+    background: #111111;
+    border: 1px solid #222222;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    width: 100%;
+    gap: 4rem;
+    padding: 3rem;
+    align-items: center;
+    transition: 0.4s ease;
+}
+
+.animation-container:hover {
+    border-color: #b74b4b;
+    box-shadow: 0 10px 25px rgba(183, 75, 75, 0.12);
+}
+
+.animation-video-wrapper {
+    flex: 1.2;
+    background: #050505;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    line-height: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+}
+
+.animation-video-wrapper video {
+    width: 100%;
+    height: auto;
+    max-height: 45rem;
+    object-fit: cover;
+    outline: none;
+}
+
+.animation-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.animation-details h4 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.animation-details .specs {
+    font-size: 1.4rem;
+    color: #b74b4b;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.animation-details .desc {
+    font-size: 1.5rem;
+    color: #aaaaaa;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+.animation-details .desc strong {
+    color: white;
+}
+
+.video-controls-hint {
+    background: rgba(183, 75, 75, 0.1);
+    border-left: 3px solid #b74b4b;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.video-controls-hint span {
+    font-size: 1.3rem;
+    color: #e58f8f;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.video-controls-hint i {
+    font-size: 1.5rem;
+}
+
+/* Responsive adjustments for projects section */
+@media (max-width: 995px) {
+    .animation-container {
+        flex-direction: column;
+        gap: 3rem;
+        padding: 2rem;
+    }
+    
+    .animation-video-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .models-grid {
+        grid-template-columns: 1fr; /* One column on tablets and mobile */
+        gap: 3rem;
+    }
+    
+    .three-container {
+        height: 30rem; /* Shorter landscape frame on smaller displays */
+    }
+}
+
+@media (max-width: 480px) {
+    .sub-heading {
+        font-size: 2.4rem;
+    }
 }
 
 /* ==================== RESUME SECTION ==================== */
@@ -362,7 +574,6 @@ span{
     margin-top: 3rem;
 }
 
-/* Left Side Info Panel */
 .resume-info {
     flex: 1;
     display: flex;
@@ -395,7 +606,6 @@ span{
     font-size: 1.4rem;
 }
 
-/* Right Side QR Code Card */
 .resume-qr-box {
     display: flex;
     flex-direction: column;
@@ -416,7 +626,7 @@ span{
 }
 
 .qr-wrapper {
-    background: white; /* Contrast layer for fast mobile scanning */
+    background: white;
     padding: 1.5rem;
     border-radius: 1.5rem;
     display: flex;
@@ -451,10 +661,9 @@ span{
     color: #b74b4b;
 }
 
-/* Responsive Adjustments for Resume Section */
 @media (max-width: 995px) {
     .resume-container {
-        flex-direction: column-reverse; /* Puts descriptive text below QR Code on mobile */
+        flex-direction: column-reverse;
         gap: 5rem;
         text-align: center;
     }
@@ -568,7 +777,6 @@ span{
     box-shadow: 0 0 15px #b74b4b;
 }
 
-/* Responsive styling for Contact boxes */
 @media (max-width: 768px) {
     .contact-container {
         gap: 2rem;
