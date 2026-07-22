@@ -371,11 +371,11 @@ span{
     margin-bottom: 3.5rem;
 }
 
-/* 3D Model 2x2 Grid Layout CSS */
+/* 3D Model 2x2 Grid Layout */
 .models-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
-    gap: 4rem; /* Increased spacing to give the models breathing room */
+    gap: 4rem;
     width: 100%;
 }
 
@@ -387,6 +387,7 @@ span{
     transition: 0.4s ease;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .model-card:hover {
@@ -395,7 +396,6 @@ span{
     box-shadow: 0 10px 25px rgba(183, 75, 75, 0.15);
 }
 
-/* Redesigned 3D Canvas wrapper height and background lighting */
 .three-container {
     width: 100%;
     height: 38rem; 
@@ -405,7 +405,6 @@ span{
     overflow: hidden;
 }
 
-/* Forces WebGL inside the three container to adapt correctly */
 .three-container canvas {
     display: block;
     width: 100% !important;
@@ -524,7 +523,6 @@ span{
     font-size: 1.5rem;
 }
 
-/* Responsive adjustments for projects section */
 @media (max-width: 995px) {
     .animation-container {
         flex-direction: column;
@@ -539,12 +537,12 @@ span{
 
 @media (max-width: 768px) {
     .models-grid {
-        grid-template-columns: 1fr; /* One column on tablets and mobile */
+        grid-template-columns: 1fr;
         gap: 3rem;
     }
     
     .three-container {
-        height: 30rem; /* Shorter landscape frame on smaller displays */
+        height: 30rem;
     }
 }
 
@@ -795,4 +793,64 @@ span{
     .contact-box h3 {
         font-size: 1.4rem;
     }
+}
+
+/* ==================== CLEAN FLOATING MODEL MODAL ==================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.floating-canvas-container {
+    width: 90vw;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating-canvas-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    outline: none;
+}
+
+/* Minimal Close Button */
+.modal-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 3.5rem;
+    color: #ffffff;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1001;
+    transition: 0.3s ease;
+    opacity: 0.7;
+}
+
+.modal-close-btn:hover {
+    color: #b74b4b;
+    opacity: 1;
+    transform: scale(1.1);
 }
